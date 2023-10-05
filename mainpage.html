@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+   
+   <link rel="stylesheet" href="">
+   <style>
+       body{
+        background-image: url(https://images.pexels.com/photos/5797899/pexels-photo-5797899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+        background-size: cover;
+     }
+
+    
+    
+    #container {
+        width: 400px;
+        margin: 0 auto;
+        text-align: center;
+
+    }
+
+    form {
+        margin-bottom: 20px;
+    }
+
+    #task {
+        width: 80%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+
+    button {
+        width: 15%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px ;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    li {
+        background-color: #f9f9f9;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    .done{
+        text-decoration: line-through;
+    }
+   </style>
+</head>
+<body>
+    <div id="container">
+
+    <h1>To-do list</h1>
+   <form>
+    <input type="text" id="task" placeholder="add text here">
+    <button type="button" id="add-task">Add</button>
+   </form>
+   <ul id="tasks"></ul>
+</div>
+   <script>
+    var addbtn = document.getElementById("add-task");
+var taskInput = document.getElementById("task");
+var tasklist = document.getElementById("tasks");
+
+addbtn.addEventListener("click", function() {
+    var task = taskInput.value;
+    addtask(task);
+    taskInput.value = "";
+});
+function addtask(task) {
+    var li = document.createElement("li");
+    li.innerHTML = task;
+    tasklist.appendChild(li);
+}
+   </script>
+</body>
+</html>
